@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_violet.mk
+    $(LOCAL_DIR)/infinity_violet.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_violet-eng \
-    derp_violet-userdebug \
-    derp_violet-user
+    infinity_violet-eng \
+    infinity_violet-userdebug \
+    infinity_violet-user

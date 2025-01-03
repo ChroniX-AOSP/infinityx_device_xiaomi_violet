@@ -7,18 +7,20 @@
 # Inherit from violet device
 $(call inherit-product, device/xiaomi/violet/device.mk)
 
-# Inherit some common DerpFest AOSP stuff.
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
-DERP_BUILDTYPE := Official
+# Inherit some common infinityFest AOSP stuff.
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_NOT_USES_BLUR := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_SUPPORTS_CALL_RECORDING := true
 
-#GMS
-WITH_GMS := true
+# Infinity-X Flags
+INFINITY_BUILD_TYPE := OFFICIAL
+INFINITY_MAINTAINER := AtharvaSwamy
+TARGET_SUPPORTS_BLUR := false
+TARGET_HAS_UDFPS := false
+WITH_GAPPS := true
 
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
@@ -34,7 +36,7 @@ $(call inherit-product-if-exists, vendor/MiuiCamera/config.mk)
 EXTRA_UDFPS_ICONS := false
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := derp_violet
+PRODUCT_NAME := infinity_violet
 PRODUCT_DEVICE := violet
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7 Pro
@@ -50,4 +52,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 PRODUCT_PRODUCT_PROPERTIES += \
    ro.build.fingerprint=$(BUILD_FINGERPRINT)
-
